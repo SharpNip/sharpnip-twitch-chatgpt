@@ -52,13 +52,13 @@ export class OpenAIOperations {
         } catch (error) {
             // Handle any errors that may occur
             console.error(error);
-            return "Sorry, something went wrong. Please try again later.";
+            return "Sorry, something went wrong in call. Please try again later.";
         }
     }
 
     async make_openai_call_completion(text) {
         try {
-            const response = await this.openai.completions.create({
+            const response = await this.openai.chat.completions.create({
               model: "gpt-4o",
               prompt: text,
               temperature: 1,
@@ -80,7 +80,7 @@ export class OpenAIOperations {
         } catch (error) {
             // Handle any errors that may occur
             console.error(error);
-            return "Sorry, something went wrong. Please try again later.";
+            return "Sorry, something went wrong in call completion. Please try again later.";
         }
     }
 }
