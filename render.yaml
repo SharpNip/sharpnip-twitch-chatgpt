@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: twitch-chatgpt-bot
+    name: neru-ttc-chatgpt-bot
     runtime: node
     branch: main
     plan: free
@@ -10,23 +10,19 @@ services:
       - key: OPENAI_API_KEY
         value: <your-openai-api-key>
       - key: CHANNELS
-        value: <your-twitch-channel>
+        value: SharpNip
       - key: GPT_MODE
         value: "CHAT"
       - key: HISTORY_LENGTH
-        value: "3"
+        value: "5"
       - key: MODEL_NAME
         value: "gpt-3.5-turbo"
       - key: COMMAND_NAME
-        value: "chat"
-      - key: TWITCH_USER  # https://dev.twitch.tv/console
-        value: "oSetinhasBot"
-      - key: TWITCH_AUTH  # https://twitchapps.com/tmi/
-        value: "oauth:9wh6ujbu2mro28zhbl8z6z921iuyxz"
+        value: ""
       - key: SEND_USERNAME
         value: "true"
       - key: ENABLE_TTS
-        value: "false"
+        value: "true"
       - key: ENABLE_CHANNEL_POINTS
         value: "false"
       - key: COOLDOWN_DURATION
