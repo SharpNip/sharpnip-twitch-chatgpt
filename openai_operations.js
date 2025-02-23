@@ -68,7 +68,7 @@ export class OpenAIOperations {
 
             // Check if response has choices
             if (response.choices) {
-                let agent_response = response.choices[0].message;
+                let agent_response = response.choices[0].message.content;
                 console.log(`Agent Response: ${agent_response}`);
                 return agent_response;
             } else {
