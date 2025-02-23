@@ -59,13 +59,11 @@ export class OpenAIOperations {
     async make_openai_call_completion(text) {
         try {
             const response = await this.openai.chat.completions.create({
-              model: "gpt-4o",
-              prompt: text,
+              model: "gpt-4o-mini",
+              messages: [{ role: "user", content: text }],
               temperature: 1,
               max_tokens: 256,
-              top_p: 1,
-              frequency_penalty: 0,
-              presence_penalty: 0,
+              store: true,
             });
 
             // Check if response has choices
