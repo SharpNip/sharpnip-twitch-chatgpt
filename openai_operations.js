@@ -61,8 +61,8 @@ export class OpenAIOperations {
             const response = await this.openai.chat.completions.create({
               model: "gpt-4o-mini",
               messages: [{ role: "user", content: text }],
-              temperature: 1,
-              max_tokens: 256,
+              reasoning_effort: "medium",
+              max_completion_tokens: 256,
               store: true,
             });
 
